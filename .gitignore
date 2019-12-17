@@ -1,0 +1,3 @@
+php_development_base/mysql/*
+node_build/app/node_modules/*
+!.gitkeep

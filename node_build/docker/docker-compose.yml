@@ -1,0 +1,7 @@
+version: "3"
+services:
+  gulp:
+    build: ./
+    tty: true
+    volumes:
+      - ../app:/var/app

@@ -1,0 +1,26 @@
+version: "3"
+services:
+  php:
+    image: php:7.3-apache
+    tty: true
+    volumes:
+      - ../app/public:/var/www/html
+    ports:
+      - 80:80
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ../mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=password
+    ports:
+      - 8080:80
